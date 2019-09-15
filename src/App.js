@@ -4,6 +4,7 @@ import Display from './Display';
 import ClearButton from './ClearButton';
 import Operators from './Operators';
 import Numbers from './Numbers';
+import AppContext from './AppContext';
 
 class App extends Component {
   state = {
@@ -96,7 +97,6 @@ class App extends Component {
                     currentResult: Number(currentResult + "" + value)
                 });
             }
-
     }
   };
 
@@ -104,10 +104,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Display value={this.state.currentResult}/>
-        <ClearButton clicked={this.onBtnClick}/>
-        <Operators clicked={this.onBtnClick}/>
-        <Numbers clicked={this.onBtnClick}/>
+          <AppContext.Provider value={this.onBtnClick}>
+              <Display value={this.state.currentResult}/>
+              <ClearButton/>
+              <Operators/>
+              <Numbers/>
+          </AppContext.Provider>
       </div>
     );
   }

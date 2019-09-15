@@ -8,8 +8,7 @@ const clearButton = (props) => (
             bgColor="white"
             color="black"
             fontSize="20px"
-            height="70px"
-            clicked={props.clicked}/>
+            height="70px"/>
 );
 
 export default clearButton;

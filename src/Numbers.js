@@ -13,8 +13,7 @@ const numbers = (props) => {
                         bgColor="white"
                         color="black"
                         fontSize="25px"
-                        height="70px"
-                        clicked={props.clicked}/>
+                        height="70px"/>
             ))}
         </div>
     );

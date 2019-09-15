@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './App.css';
+import AppContext from './AppContext';
 
-const button = (props) => {
+const Button = (props) => {
+    const clickHandler = useContext(AppContext);
+
     const style = {
         color: props.color,
         backgroundColor: props.bgColor,
@@ -13,10 +16,10 @@ const button = (props) => {
     };
 
     return (
-        <button className={props.className} style={style} onClick={() => props.clicked(props.value)}>
+        <button className={props.className} style={style} onClick={() => clickHandler(props.value)}>
             {props.value}
         </button>
     );
 };
 
-export default button;
+export default Button;
